@@ -111,6 +111,12 @@ function Pulley(ixo,iyo,iscale){
   this.theta = 0;
   this.thetadot = 0 ;
   
+  this.updateRadius = function(r){
+    this.r = r;//m, pulley radius
+  this.m = PI*pow(this.r,2)*this.thick*this.density;//mass
+  this.J = this.m/2*pow(this.r,2);//kg-m^2, moment of inertia
+    
+  }
   
   
   this.draw = function(){
@@ -229,7 +235,7 @@ function updateParams() {
     alert('Too small. Try larger than '+str(2*pulley.rinner)+' m')
   }
   else{
-    pulley.r = my_r;
+    pulley.updateRadius(my_r);
   }
   
   my_w = parseFloat(velbox.value());
