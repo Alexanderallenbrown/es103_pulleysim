@@ -160,7 +160,7 @@ function Pulley(ixo,iyo,iscale){
     thdd = 1.0/this.J*(-this.b*this.thetadot-this.tc);
     if(this.thetadot>0){
       this.theta+=this.thetadot*this.dt;
-      this.thetadot+=thdd*this.dt;
+      this.thetadot-=thdd*this.dt;
     }
     //console.log(this.thetadot,this.dt);
   }
@@ -194,7 +194,7 @@ function Pulley(ixo,iyo,iscale){
     thdd_final = 1.0/6*sum3thd;
     
     if(this.thetadot>0){
-    this.theta = this.theta+this.dt*thd_final;
+    this.theta = this.theta-this.dt*thd_final;
     this.thetadot = this.thetadot+this.dt*thdd_final;
     //console.log(this.theta,this.thetadot)
     }
