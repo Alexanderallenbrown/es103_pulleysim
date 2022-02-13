@@ -44,7 +44,7 @@ function setup() {
   
   recbox = createCheckbox('Record Data', false);
   recbox.position(velbox.x,velbox.y+velbox.height*1.5)
-  recbox.changed(setRec);
+  //recbox.changed(setRec);
   
   
   runbox = createInput();
@@ -213,6 +213,7 @@ function Pulley(ixo,iyo,iscale){
 
 
 function updateParams() {
+  setRec();
   my_r = parseFloat(rbox.value());
   if(isNaN(my_r)){
     alert('Not a Number, try again');
