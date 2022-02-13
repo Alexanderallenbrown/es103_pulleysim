@@ -103,7 +103,7 @@ function Pulley(ixo,iyo,iscale){
   this.m = PI*pow(this.r,2)*this.thick*this.density;//mass
   this.J = this.m/2*pow(this.r,2);//kg-m^2, moment of inertia
   this.b = 0.0025;// damping constant of bearing
-  this.tc = 0.0;//coulomb torque
+  this.tc = 0.0001;//coulomb torque
   //bearing
   this.rinner = 0.01;//bearing radius.
   
@@ -231,8 +231,8 @@ function updateParams() {
   else if(my_r>.1){
     alert('Too Large. Try less than 0.1m')
   }
-  else if(my_r<pulley.rinner){
-    alert('Too small. Try larger than '+str(2*pulley.rinner)+' m')
+  else if(my_r<.03){
+    alert('Too small. Try larger than '+str(.03)+' m')
   }
   else{
     pulley.updateRadius(my_r);
