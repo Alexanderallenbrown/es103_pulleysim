@@ -18,7 +18,7 @@ function setup() {
   simtime = 10.0;
   recdata=false;
   
-  createCanvas(700, 400);
+  createCanvas(700, 300);
   
   recorder = new Recorder();
   
@@ -42,7 +42,7 @@ function setup() {
   vellabel.position(velbox.x+velbox.width,velbox.y);
   
   
-  recbox = createCheckbox('Record Data', false);
+  recbox = createCheckbox('Record Data: columns [time, omega (rad/s)]', false);
   recbox.position(velbox.x,velbox.y+velbox.height*1.5)
   //recbox.changed(setRec);
   
@@ -72,11 +72,12 @@ function draw() {
   pulley.update(.01);
   
   rectime = millis()/1000.0-startrectime;
-  if(recdata&&(rectime>simtime)){
+  if((rectime>simtime)){
     recdata=false;
-    if(simrunning){
+    if(1){
       simrunning=false;
     }
+    
   }
   else{
     if(simrunning){
