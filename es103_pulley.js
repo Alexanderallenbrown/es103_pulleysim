@@ -37,7 +37,7 @@ function setup() {
   
   velbox = createInput();
   velbox.position(rbox.x,rbox.y+1.5*rbox.height);
-  velbox.value('3.0');
+  velbox.value('30.0');
   vellabel = createElement('body','Initial Angular Velocity (rad/s)');
   vellabel.position(velbox.x+velbox.width,velbox.y);
   
